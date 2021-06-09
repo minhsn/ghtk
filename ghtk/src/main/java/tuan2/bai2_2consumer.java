@@ -29,7 +29,7 @@ public class bai2_2consumer {
 
 
         KafkaConsumer<String,GenericRecord> consumers=new KafkaConsumer<String, GenericRecord>(properties);
-        consumers.subscribe(Arrays.asList("minhnd85"));
+        consumers.subscribe(Arrays.asList("minhnd855"));
         while (true) {
             ConsumerRecords<String, GenericRecord> records = consumers.poll(Duration.ofMillis(1000));
             for (ConsumerRecord<String, GenericRecord> record : records) {
