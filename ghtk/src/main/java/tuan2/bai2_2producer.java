@@ -26,7 +26,7 @@ import java.util.Properties;
 public class bai2_2producer {
     public static void main(String[] args) throws IOException {
         Schema schema = new Schema.Parser().parse(new File("/home/dell/Desktop/tuan2.1/src/main/avro/emp.avsc"));
-        String topic="minhnd85";
+        String topic="minhnd855";
 
         GenericRecord e1=new GenericData.Record(schema);
         GenericData.Record ad = new GenericData.Record(schema.getField("adress").schema());
