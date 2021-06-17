@@ -18,7 +18,7 @@ public class bai1 {
 
     public static void main(String[] agrs) throws ClassNotFoundException, SQLException, IOException {
 
-        int batch_size=5000;
+        int batch_size=2500;
         CSVReader reader = new CSVReader(new FileReader("/home/dell/Desktop/ghtk/src/main/java/tuan3/gop.csv"));
         String[] nextLine;
 
