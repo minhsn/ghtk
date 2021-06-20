@@ -21,6 +21,7 @@ public class bai1 {
         int batch_size=2500;
         CSVReader reader = new CSVReader(new FileReader("/home/dell/Desktop/ghtk/src/main/java/tuan3/gop.csv"));
         String[] nextLine;
+        String[] first = reader.readNext();
 
         Connection conn=getConnect();
         Statement statement=conn.createStatement();
