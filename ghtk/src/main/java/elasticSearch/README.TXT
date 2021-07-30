@@ -26,6 +26,17 @@ GET dantri/_search
 }
 
 Bài 2:
+PUT dantri
+{
+"mappings": {
+   "properties": {
+       "title": {
+           "type": "keyword"
+            }
+        }
+     }
+  }
+
   GET dantri/_search
 {
   "query": {
@@ -56,5 +67,16 @@ hàm main.py dùng để sinh lấy title sau đó tính tfidf của các từ c
 dữ liệu khi đẩy vào elastic search có dạng sau
 {"index":{"_index":"dantri","_id":29214}}
 {"suggest_title": [{"input" : "Tàu ngầm" , "weight" : 14},{"input" : "Kilo" , "weight" : 6},{"input" : "Đà Nẵng" , "weight" : 519},{"input" : "đã" , "weight" : 434},{"input" : "về" , "weight" : 1115},{"input" : "đến" , "weight" : 332},{"input" : "quân cảng" , "weight" : 2},{"input" : "Cam Ranh" , "weight" : 32}]}
+
+PUT dantri
+{
+  "mappings": {
+    "properties": {
+      "suggest_title": {
+        "type": "completion" 
+      }
+    }
+  }
+}
 
 file GetTitle dùng để nhập từ cần tìm cả từ không dấu trả về tập các từ gợi ý 
