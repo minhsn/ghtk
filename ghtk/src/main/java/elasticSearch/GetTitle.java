@@ -37,7 +37,7 @@ public class GetTitle {
     }
 
 
-    public static List<String> getSuggestion(String input) throws IOException {
+    public static List<String> getSuggestion(String input) throws IOException { //lấy từ gợi ý từ elastic search
         RestHighLevelClient client=new RestHighLevelClient(RestClient.builder(new HttpHost("10.140.0.10",9200,"http")));
 
 
@@ -64,7 +64,7 @@ public class GetTitle {
 
 
 
-    public static List<String> removeDuplicates(List<String> list)
+    public static List<String> removeDuplicates(List<String> list) // xóa các phần tử lặp trong list
     {
 
         List<String> newList = new ArrayList<>();
@@ -79,7 +79,7 @@ public class GetTitle {
 
         return newList;
     }
-    public static List<String> genVnWords(String input){
+    public static List<String> genVnWords(String input){ //dùng để biến đổi từ input thành dạng regex
         String replaceString="";
         List<String> newList = new ArrayList<>();
         newList.add(input);
