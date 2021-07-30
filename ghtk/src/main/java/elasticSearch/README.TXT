@@ -37,30 +37,28 @@ PUT dantri
      }
   }
 
-  GET dantri/_search
+ GET dantri\_search
 {
   "query": {
     "bool": {
-      
+      "must" : {
+        "match_phrase_prefix" : {
+          "title" : "Hà Nội"
+        }
+      },
       "must_not": [
         {
-          "match_phrase": {
+            "match": {
             "description": "Hà Nội"
-          }
-        }
-      ],
-      "must": [
-        {
-          "prefix": {
-            "title.keyword": {
-              "value": "Hà Nội"
             }
-          }
         }
       ]
     }
+  },
+    "sort" : {
+    "time" : { "order" : "desc" }
   }
-}   
+} 
 
 bài 3
 hàm main.py dùng để sinh lấy title sau đó tính tfidf của các từ có trong đó 
